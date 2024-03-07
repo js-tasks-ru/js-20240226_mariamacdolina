@@ -6,8 +6,8 @@
  */
 
 export const pick = (obj, ...fields) => {
-    let filteredObj = {};
-    let args = [...fields];
+    const filteredObj = {};
+    const args = [...fields];
     if (args.length) {
         for (let key of Object.keys(obj)) {
             if (args.indexOf(key) !== -1) {
