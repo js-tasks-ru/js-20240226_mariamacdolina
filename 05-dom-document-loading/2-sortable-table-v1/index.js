@@ -61,9 +61,13 @@ export default class SortableTable {
     if (!col || !col.sortable) return;
 
     if (col.sortType === 'number') {
-        this.data.sort((a, b) => order === 'asc' ? a[field] - b[field] : b[field] - a[field]);
+        this.data.sort((a, b) => order === 'asc' 
+        ? a[field] - b[field] 
+        : b[field] - a[field]);
     } else {
-        this.data.sort((a, b) => order === 'asc' ? a[field].localeCompare(b[field], "ru", { caseFirst: "upper" }) : b[field].localeCompare(a[field], "ru", { caseFirst: "upper" }));
+        this.data.sort((a, b) => order === 'asc' 
+        ? a[field].localeCompare(b[field], "ru", { caseFirst: "upper" }) 
+        : b[field].localeCompare(a[field], "ru", { caseFirst: "upper" }));
     }
 
     const bodyElement = this.element.querySelector('[data-element="body"]');
